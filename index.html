@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Car dashboard</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="leftScreen" class="screenLeft">
+        <div id="speedometer">
+          <div style="display: none">
+            <img id="sprite" src="assets/icons.svg" />
+          </div>
+          <canvas id="canvas" width="425" height="210"></canvas>
+        </div>
+        <button id="leftSign" name="leftSign">TURN LEFT</button>
+        <button id="rightSign" name="rightSign">TURN RIGHT</button>
+        <button id="speedUp" name="speed">SPEED UP</button>
+        <button id="speedDown" name="speed">SPEED DOWN</button>
+        <button id="tachoUp" name="tachoUp">ADD GAS</button>
+        <button id="tachoDown" name="tachoDown">LOWER GAS</button>
+        <button name="dippedBeam" id="dippedBeam">DIPPED BEAM</button>
+        <button name="highBeam" id="highBeam">HIGH BEAM</button>
+        <button id="brake" name="brake">USE BRAKE</button>
+        <button id="seatBelt" name="seatBelt">FASTEN SEATBELL</button>
+        <button id="doors" name="doors">OPEN THE DOOR</button>
+        <button id="bonnet" name="bonnet">OPEN BONNET</button>
+        <button id="trunk" name="trunk">OPEN TRUNK</button>
+        <button id="lock" name="lock">LOCK THE CAR</button>
+      </div>
+      <div id="rightScreen" class="screenRight">
+        <div id="clockContainer" class="clockContainer">
+          <img src="images/bluetooth.png" />
+          <img src="images/wifi.png" />
+          <button id="settingsButton">SETTINGS</button>
+          <span class="spacer"></span>
+          <p
+            style="font-size: 24px; text-align: right; margin: 5px 1em"
+            id="time"
+          ></p>
+        </div>
+        <div id="scroll" class="scroll"></div>
+        <div id="rightContainer">
+          <div id="playerContainer" class="screenRightPlayer">
+            <div class="player">
+              <div class="details">
+                <div class="nowPlaying">PLAYING x OF y</div>
+                <div class="songArt"></div>
+                <div class="songName">Song Name</div>
+                <div class="songArtist">Song Artist</div>
+              </div>
+              <div class="buttons">
+                <button class="prevSong" onclick="prevSong()">
+                  &#9666;&#9666;
+                </button>
+                <button class="playPauseSong" onclick="playpauseSong()">
+                  &#9654;
+                </button>
+                <button class="nextSong" onclick="nextSong()">
+                  &#9656;&#9656;
+                </button>
+              </div>
+              <div class="sliderContainer">
+                <div class="currentTime">00:00</div>
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="0"
+                  class="seekSlider"
+                  onchange="seekTo()"
+                />
+                <div class="totalDuration">00:00</div>
+              </div>
+            </div>
+          </div>
+          <div id="mapContainer" class="screenRightMap">
+            <div class="mapouter">
+              <div class="gmapCanvas">
+                <iframe
+                  class="gmapIframe"
+                  width="100%"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=cti łódź&amp;t=k&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                ></iframe
+                ><a href="https://embed-googlemap.com">embed-googlemap.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="temperatureContainer">
+      <button id="goBack">Return to the dashboard</button>
+      <div class="temp">
+        <div class="emoji">😄</div>
+        <input class="sliderTemp" type="range" min="0" max="40" />
+        <p class="temperature">
+          <span class="temperatureCount">20</span>&deg;C
+        </p>
+      </div>
+      <div class="ac">TURN AIR CONDITIONING ON</div>
+    </div>
+    <script src="js/fraction.min.js"></script>
+    <script src="js/speedometer.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

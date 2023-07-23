@@ -1,0 +1,309 @@
+body,
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+	background-color: lightgreen;
+	transition: background-color 0.5s;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  display: flex;
+  background-color: #555555;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 12rem;
+  border-radius: 16px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+#seatBelt, #doors {
+	height: 3rem;
+	width: 15rem
+}
+
+#leftSign, #rightSign {
+  width: 24.5rem
+}
+
+#brake, #highBeam {
+	width: 10.5rem
+}
+
+#doors {
+	width: 12.5rem
+}
+
+#bonnet {
+	width: 11.5rem
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  padding: 1em;
+}
+
+.screenLeft,
+.screenRight {
+  height: 650px;
+  border-radius: 16px;
+  background-color: #272727;
+  width: 50em !important;
+  margin-top: 3rem
+}
+
+.temperatureContainer {
+  height: 500px;
+  border-radius: 16px;
+  background-color: #272727;
+  margin: 8rem 22rem;
+  display: inline-flex;
+}
+
+div {
+	color:#fff
+}
+
+#canvas {
+	position: relative;
+	left: 6em;
+	top: 1em;
+	margin-bottom: 3.5em;
+	height: 18em
+}
+
+.clockContainer {
+  margin-left: 1em;
+  display: flex;
+}
+
+.clockContainer > img {
+  width: 30px;
+  height: 35px;
+  margin: 10px;
+}
+
+.screenRight {
+  display: grid;
+  grid-template-columns: 5% 1fr;
+}
+
+.screenRight > div:first-child {
+  grid-column: 1 / -1;
+}
+
+.screenRightPlayer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  gap: 3em;
+  padding: 40px 60px;
+  margin-top: -50px;
+  margin-left: 1.3rem
+}
+
+.scroll {
+  border-radius: 16px;
+  margin-left: 30px;
+  height: 300px;
+  width: 15px;
+  align-self: center;
+  z-index: 10;
+  margin-bottom: 75px;
+}
+
+.scrollBottom {
+  background: rgb(150, 150, 150);
+  background: linear-gradient(
+    180deg,
+    rgba(150, 150, 150, 1) 0%,
+    rgba(147, 147, 147, 1) 50%,
+    rgba(255, 255, 255, 1) 50%
+  );
+}
+
+.scrollTop {
+  background: rgb(150, 150, 150);
+  background: linear-gradient(
+    0deg,
+    rgba(150, 150, 150, 1) 0%,
+    rgba(147, 147, 147, 1) 50%,
+    rgba(255, 255, 255, 1) 50%
+  );
+}
+
+.scroll:hover {
+  cursor: pointer;
+}
+
+.spacer {
+margin-left: 18rem;
+}
+
+.player {
+	height: 25em;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	width: 32em;
+}
+
+.details {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	margin-top: 25px;
+}
+
+.songArt {
+	margin: 25px;
+	height: 250px;
+	width: 250px;
+	background-image: url("https://images.pexels.com/photos/262034/pexels-photo-262034.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+	background-size: cover;
+	border-radius: 15%;
+}
+
+.nowPlaying {
+	font-size: 1rem;
+}
+
+.songName {
+	font-size: 3rem;
+}
+
+.songArtist {
+	font-size: 1.5rem;
+}
+
+.buttons {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+  margin-top: 1.2rem;
+}
+
+#settingsButton {
+  height: 3rem !important;
+}
+
+.temperatureContainer {
+  display: none;
+}
+
+.sliderContainer {
+	width: 100%;
+	max-width: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  margin-top: 1.2rem;
+}
+
+.seekSlider {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+  width: 100%;
+	height: 5px;
+	background: black;
+	opacity: 0.7;
+	-webkit-transition: 0.2s;
+	transition: opacity 0.2s;
+  }
+
+
+.seekSlider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 15px;
+	background: white;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+}
+
+.gmapIframe {
+    height: 400px !important;
+}
+
+.emoji{
+  position: relative;
+  top: 7rem;
+  left: 7rem;
+  width: 60%;
+  font-size: 5rem;
+  text-align: center
+}
+
+.sliderTemp{
+   -webkit-appearance: none;
+   width: 60%;
+   height: 1.5em;
+   background: linear-gradient(90deg,blue,green,red);
+   border-radius: 1em;
+   outline:none;
+   position: relative;
+   top: 10rem;
+   left: 7rem;
+ }
+
+ 
+ .sliderTemp::-webkit-slider-thumb{
+   -webkit-appearance: none;
+   appearance: none;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   background: radial-gradient(#eee, #ccc); 
+   cursor: pointer;
+ }
+
+ .ac{
+  background: #555555;
+  width: 10rem;
+  text-align: center;
+  padding-top: 15rem;
+  cursor: pointer;
+ }
+
+ .temp{
+  background: rgb(50, 47, 47);
+  width: 40rem;
+ }
+
+ .temperature {
+  position: relative;
+  top: 8rem;
+  left: 7rem;
+  width: 60%;
+  font-size: 4rem;
+  text-align: center
+ }
